@@ -5,7 +5,7 @@ var totalSeconds = 0;
 
 setInterval(setTime, 1000);
 
-totalSeconds = 189600;
+totalSeconds = 0;
 
    function setTime() {
       ++totalSeconds;
