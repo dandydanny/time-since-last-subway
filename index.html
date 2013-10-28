@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<! background-color: #015643; >
+<style type="text/css">
+.desc {
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	font-size: 90px;
+	color: white;
+}
+.digit {
+	font-family: 'Roboto Slab', serif;
+	font-size: 150px;
+	font-weight: 700;
+	text-align: center;
+	color: yellow;
+	
+	  text-shadow: 0 1px 0 #aaa,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #999,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #888,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+h1 {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+/*Animation Prefs*/
+@-webkit-keyframes pulse {
+      0% {background-color: #015643; rotate(30deg);}
+     25% {background-color: #000000;}
+     50% {background-color: #333333;}
+     75% {background-color: #000000;}
+     100% {background-color: #015643;}
+}
+
+/*Body Styles*/
+body {
+    -webkit-animation: pulse 10s infinite alternate;
+    background-color: #45CEEF;
+	line-height: 80%;
+}
+</style>
+
+</head>
+
+<body>
+
+<H1 class="desc">TIME SINCE LAST</H1><br>
+<p class="desc"><img src="subwaylogo.png" width="566" height="162" /></p>
+<p class="digit"><label id="hours">00</label>:<label id="minutes">00</label>:<label id="seconds">00</label></p>
+    <script type="text/javascript">
+		var hoursLabel = document.getElementById("hours");
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
+		
+		totalSeconds = 189600;
+	
+        function setTime()
+        {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60%60));
+			hoursLabel.innerHTML = pad(parseInt(totalSeconds/3600));
+        }
+
+        function pad(val)
+        {
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+    </script>
+</body>
+</html>
