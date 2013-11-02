@@ -25,8 +25,12 @@ $(document).ready(function() {
         }
      }
 
+
+     var horn = document.getElementsByTagName("audio")[0];
+
      $( ".digit").on( "click", function() {
       resetTime();
+      horn.play();
       $( "#sandwich" ).show("scale", "percent: 500", 4000, null);
     });
 
