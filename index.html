@@ -4,14 +4,37 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<! background-color: #015643; >
+<!-- background-color: #015643;-->
 <style type="text/css">
+
+html, body {height:100%; margin:0; padding:0;}
+
 .desc {
 	font-family: 'Roboto Slab', serif;
 	text-align: center;
 	font-size: 90px;
 	color: white;
 }
+
+.imgcontainer {
+  //margin: -1000px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  //overflow: visible;
+}
+
+#sandwich {
+
+  z-index: 89234;
+  position: relative;
+  display: none;
+  height: 400%;
+  width: 400%;
+  margin-top: -1300px;
+  margin-left: -2150px;
+}
+
 .digit {
 	font-family: 'Roboto Slab', serif;
 	font-size: 150px;
@@ -32,6 +55,7 @@
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 }
+
 h1 {
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -67,11 +91,17 @@ body {
 </head>
 
 <body>
+<audio src="horn-short.mp3"></audio>
 
 <H1 class="desc">TIME SINCE LAST</H1><br>
 <p class="desc"><img src="subwaylogo.png" width="566" height="162" /></p>
-<p class="digit" onClick="resetTime()"><label id="hours">00</label>:<label id="minutes">00</label>:<label id="seconds">00</label></p>
 
+<div id="imgcontainer"><img src="sandwich.png" id="sandwich"/></div>
+
+<p class="digit" ><label id="hours">00</label>:<label id="minutes">00</label>:<label id="seconds">00</label></p>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="counter.js"></script>
 
 </body>
