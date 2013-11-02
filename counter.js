@@ -4,18 +4,18 @@ $(document).ready(function() {
   var minutesLabel = document.getElementById("minutes");
   var secondsLabel = document.getElementById("seconds");
   var totalSeconds = 0;
-  
+
   setInterval(setTime, 1000);
-  
+
   totalSeconds = 0;
-  
+
      function setTime() {
         ++totalSeconds;
         secondsLabel.innerHTML = pad(totalSeconds%60);
         minutesLabel.innerHTML = pad(parseInt(totalSeconds/60%60));
         hoursLabel.innerHTML = pad(parseInt(totalSeconds/3600));
      }
-  
+
      function pad(val) {
         var valString = val + "";
         if (valString.length < 2) {
@@ -24,7 +24,7 @@ $(document).ready(function() {
            return valString;
         }
      }
-  
+
      $( ".digit").on( "click", function() {
       resetTime();
       $( "#sandwich" ).show("scale", "percent: 500", 4000, null);
